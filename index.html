@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,85 +8,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <title>CanKado Assessment</title>
     <style>
-        html,body{
+        html,
+        body {
             width: 100%;
             height: 100%;
-            margin:0;
-            padding:0;
+            margin: 0;
+            padding: 0;
             font-family: 'Poppins';
             font-size: 14px;
         }
-        h4{
+
+        h4 {
             font-size: 1.1em;
         }
-        div{
+
+        div {
             display: block;
         }
-        span{
+
+        span {
             display: inline;
         }
-        input[type="radio" i]{
+
+        input[type="radio"i] {
             background-color: saddlebrown;
         }
-        .content{
+
+        .content {
             width: 100%;
             height: 100%;
         }
-        .details_header{
+
+        .details_header {
             width: 100%;
             font-weight: 500;
             font-family: "poppins";
         }
-        .title{
+
+        .title {
             margin: 0em;
             margin-bottom: .5em;
             color: #585859;
         }
+
         .details_header,
-        .sec > .title{
+        .sec>.title {
             margin: .6em 0;
             background: rgb(231, 231, 231);
         }
-        .q-sec{
-            padding:.5em .5em 0 .5em;
+
+        .q-sec {
+            padding: .5em .5em 0 .5em;
             /* padding-top: .5em; */
         }
-        .quest{
+
+        .quest {
             border-bottom: 1px solid #dcdbdb;
             padding: 0 .5em;
             overflow: hidden;
             margin-bottom: .5em;
         }
-        .quest .title{
+
+        .quest .title {
             margin-bottom: .5em;
         }
-        .quest .options_wrap{
+
+        .quest .options_wrap {
             margin-bottom: .5em;
             margin-bottom: 1em;
             color: #585859;
             width: 100%;
             /* background: rgb(195, 195, 195); */
         }
-        .options{
+
+        .options {
             position: relative;
             margin-left: 20px;
             width: 80%;
             display: inline-flex;
             /* background-color: rgb(191, 206, 223); */
         }
-        .row_options{
+
+        .row_options {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
         }
-        label{
+
+        label {
             display: inline-block;
             vertical-align: top;
         }
+
         .textarea-content,
         select,
         textarea,
-        input{
+        input {
             border-radius: 4px;
             width: 100%;
             font-size: 1em;
@@ -95,82 +113,100 @@
             border: 1px solid #dcdbdb;
             background-color: none;
         }
+
         select,
-        input.input{
+        input.input {
             padding-top: 5px;
             padding-bottom: 5px;
         }
+
         input[type="checkbox"],
         input[type=radio] {
             width: 1.2em;
             height: 1.2em;
         }
-        .rageSlider{
-            min-width:100%;
+
+        .rageSlider {
+            min-width: 100%;
         }
-        .rageSlider input{
+
+        .rageSlider input {
             max-width: 100%;
         }
-        input#SliderInput{
+
+        input#SliderInput {
             padding: 0;
         }
-        .sldierLabels{
+
+        .sldierLabels {
             position: relative;
             margin-bottom: 1.45em;
         }
-        span.slider-labels{
+
+        span.slider-labels {
             position: absolute;
             transform: translateX(-40%);
         }
-        span.slider-labels::before{
-            content:'';
+
+        span.slider-labels::before {
+            content: '';
             position: absolute;
-            width:2px;
+            width: 2px;
             height: 100%;
             background-color: black;
             left: 50%;
             top: -100%;
             transform: translateX(-50%);
         }
+
         .textarea-content,
-        textarea,input{
+        textarea,
+        input {
             max-width: 98%;
         }
-        .textarea-content{
+
+        .textarea-content {
             word-break: break-word;
         }
-/* scale slider */
-        .scale-slider{
+
+        /* scale slider */
+        .scale-slider {
             display: flex;
             justify-content: space-evenly;
             margin-top: 20px;
             margin-bottom: 40px;
         }
-        .slider-section{
+
+        .slider-section {
             width: 50%;
         }
-        .slider-section{
+
+        .slider-section {
             position: relative;
         }
-        .rangeSlider-vertical{
+
+        .rangeSlider-vertical {
             position: relative;
             min-width: unset;
         }
-        .section-right{
+
+        .section-right {
             display: flex;
             flex-direction: column;
             /* justify-content: center; */
             align-items: center;
         }
-        .rangeSlider-vertical input{
-            writing-mode: bt-lr; 
+
+        .rangeSlider-vertical input {
+            writing-mode: bt-lr;
             -webkit-appearance: slider-vertical;
             width: 0px;
             height: 100%;
             position: absolute;
             z-index: 2;
         }
-        .rangeSlider-vertical .sldierLabels{
+
+        .rangeSlider-vertical .sldierLabels {
             display: flex;
             flex-direction: column-reverse;
             height: 476px;
@@ -183,7 +219,8 @@
             overflow: visible;
             /* padding-top: 2px; */
         }
-        .scale{
+
+        .scale {
             /* min-height: 100%; */
             min-height: 480px;
             width: 100%;
@@ -192,28 +229,32 @@
             background-repeat: no-repeat;
             background-size: contain;
         }
-        .rangeSlider-vertical .slider-labels{
+
+        .rangeSlider-vertical .slider-labels {
             opacity: 0;
             display: none;
             position: unset;
             pointer-events: none;
             z-index: 0;
-            transform:unset;
+            transform: unset;
             display: inline-block;
         }
-        .rangeSlider-vertical span.slider-labels::before{
+
+        .rangeSlider-vertical span.slider-labels::before {
             height: 2px;
             width: 16px;
             content: none;
         }
-        .axis-labels{
+
+        .axis-labels {
             /* position: absolute; */
             max-width: 200px;
             text-align: center;
             /* left: -25px; */
             transform: translateX(-40px);
         }
-        .slider-sim{
+
+        .slider-sim {
             position: absolute;
             width: 20px;
             height: 3px;
@@ -221,6 +262,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="content">
         <div class="print_content">
@@ -247,7 +289,7 @@
                     <!-- all headers with this class and tag {questionnaires.title} -->
                     <h4 class="title">CIPN-Fragebogen Polyneuropathie questionnaires title</h4>
                     <!-- question section with title and questions. This section repeats for questions -->
-<!-- new section -->
+                    <!-- new section -->
                     <div class="q-sec">
                         <h4 class="title">
                             <!-- section title -->
@@ -257,47 +299,48 @@
                             <h4 class="title">
                             </h4>
                             <div class="options_wrap">
-                                    <div class="scale-slider options">
-                                        <div class="slider-section">
-                                            <ul>
-                                                <li>a</li>
-                                                <li>b</li>
-                                                <li>c</li>
-                                            </ul>
-                                        </div>
-                                        <div class="slider-section section-right">
-                                            <div class="axis-labels">Beste Gesundheit, die Sie sich vorstellen können</div>
-                                            <div id="RangeSlider" class="rageSlider rangeSlider-vertical">
-                                                <!-- <input id="SliderInput" interval="5" type="range" min="0" max="100" orient="vertical" /> -->
-                                                <div data-value="50" class="slider-sim"></div>
-                                                <div class="sldierLabels">
-                                                    <div class="scale"></div>
-                                                </div>
-                                            </div>
-                                            <div class="axis-labels">Schlechteste Gesundheit, die Sie sich vorstellen können</div>
-                                        </div>                                        
+                                <div class="scale-slider options">
+                                    <div class="slider-section">
+                                        <ul>
+                                            <li>a</li>
+                                            <li>b</li>
+                                            <li>c</li>
+                                        </ul>
                                     </div>
+                                    <div class="slider-section section-right">
+                                        <div class="axis-labels">Beste Gesundheit, die Sie sich vorstellen können</div>
+                                        <div id="RangeSlider" class="rageSlider rangeSlider-vertical">
+                                            <!-- <input id="SliderInput" interval="5" type="range" min="0" max="100" orient="vertical" /> -->
+                                            <div data-value="50" class="slider-sim"></div>
+                                            <div class="sldierLabels">
+                                                <div class="scale"></div>
+                                            </div>
+                                        </div>
+                                        <div class="axis-labels">Schlechteste Gesundheit, die Sie sich vorstellen können
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
     <script>
-        var slider,SliderInput,labels,min,max,interval,divs;
-        document.addEventListener("DOMContentLoaded", function(){
+        var slider, SliderInput, labels, min, max, interval, divs;
+        document.addEventListener("DOMContentLoaded", function () {
             Slider = document.getElementById("RangeSlider");
             // SliderInput = Slider.firstElementChild;
             SliderInput = Slider.children[1];
             labels = Slider.getElementsByClassName("sldierLabels")[0];
             // Slider.children[0].innerHTML = '0'
             min = parseInt(SliderInput.getAttribute("min")),
-            max = parseInt(SliderInput.getAttribute("max")),
-            interval = parseInt(SliderInput.getAttribute("interval")),
-            divs = (max-min)/interval;
-                // points = max/divs;
+                max = parseInt(SliderInput.getAttribute("max")),
+                interval = parseInt(SliderInput.getAttribute("interval")),
+                divs = (max - min) / interval;
+            // points = max/divs;
             // let min,max,interval;
             // ["min", "max", "interval"].forEach(
             //     // prefix => document.addEventListener(prefix+"fullscreenchange", yourCheckFunction, false)
@@ -307,16 +350,16 @@
             //         SliderInput.getattribute(`${prefix}`);
             //         console.log(prefix)
             //     }
-                
+
             // );
             // scale slider
-                var scale = Slider.getElementsByClassName("slider-sim")[0]
-                // var scaleValue = parseInt(scale.getAttribute("data-value"));
-                scale.style.bottom = `${parseInt(scale.getAttribute("data-value"))}%`;
-                // console.log(scaleValue)
-            function genLabels(){
-                for (i = min; i < max+1; i++) {
-                    if(i%5 === 0){
+            var scale = Slider.getElementsByClassName("slider-sim")[0]
+            // var scaleValue = parseInt(scale.getAttribute("data-value"));
+            scale.style.bottom = `${parseInt(scale.getAttribute("data-value"))}%`;
+            // console.log(scaleValue)
+            function genLabels() {
+                for (i = min; i < max + 1; i++) {
+                    if (i % 5 === 0) {
                         var label = document.createElement("span")
                         label.setAttribute("class", 'label');
                         label.classList.add('slider-labels')
@@ -325,10 +368,11 @@
                         label.innerHTML = i;
                         labels.appendChild(label)
                     }
-                
-            }}
+
+                }
+            }
             genLabels();
-            function getSliderValue(){
+            function getSliderValue() {
                 console.log(this.value)
                 Slider.children[0].innerHTML = this.value;
             }
@@ -342,4 +386,5 @@
         });
     </script>
 </body>
+
 </html>
