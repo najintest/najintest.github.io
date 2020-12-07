@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <title>CanKado Assessment</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin:0;
+            padding:0;
+            font-family: 'Poppins';
+            font-size: 14px;
+        }
+        h4{
+            font-size: 1.1em;
+        }
+        div{
+            display: block;
+        }
+        span{
+            display: inline;
+        }
+        input[type="radio" i]{
+            background-color: saddlebrown;
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+        }
+        .details_header{
+            width: 100%;
+            font-weight: 500;
+            font-family: "poppins";
+        }
+        .title{
+            margin: 0em;
+            margin-bottom: .5em;
+            color: #585859;
+        }
+        .details_header,
+        .sec > .title{
+            margin: .6em 0;
+            background: rgb(231, 231, 231);
+        }
+        .q-sec{
+            padding:.5em .5em 0 .5em;
+            /* padding-top: .5em; */
+        }
+        .quest{
+            border-bottom: 1px solid #dcdbdb;
+            padding: 0 .5em;
+            overflow: hidden;
+            margin-bottom: .5em;
+        }
+        .quest .title{
+            margin-bottom: .5em;
+        }
+        .quest .options_wrap{
+            margin-bottom: .5em;
+            margin-bottom: 1em;
+            color: #585859;
+            width: 100%;
+            /* background: rgb(195, 195, 195); */
+        }
+        .options{
+            position: relative;
+            margin-left: 20px;
+            width: 80%;
+            display: inline-flex;
+            /* background-color: rgb(191, 206, 223); */
+        }
+        .row_options{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        label{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .textarea-content,
+        select,
+        textarea,
+        input{
+            border-radius: 4px;
+            width: 100%;
+            font-size: 1em;
+            font-family: 'Poppins';
+            color: #585859;
+            padding-left: 11px;
+            border: 1px solid #dcdbdb;
+            background-color: none;
+        }
+        select,
+        input.input{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        input[type="checkbox"],
+        input[type=radio] {
+            width: 1.2em;
+            height: 1.2em;
+        }
+        .rageSlider{
+            min-width:100%;
+        }
+        .rageSlider input{
+            max-width: 100%;
+        }
+        input#SliderInput{
+            padding: 0;
+        }
+        .sldierLabels{
+            position: relative;
+            margin-bottom: 1.45em;
+        }
+        span.slider-labels{
+            position: absolute;
+            transform: translateX(-40%);
+        }
+        span.slider-labels::before{
+            content:'';
+            position: absolute;
+            width:2px;
+            height: 100%;
+            background-color: black;
+            left: 50%;
+            top: -100%;
+            transform: translateX(-50%);
+        }
+        .textarea-content,
+        textarea,input{
+            max-width: 98%;
+        }
+        .textarea-content{
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="print_content">
+            <div class="details_header">
+                <table>
+                    <tr>
+                        <td>Patient Id</td>
+                        <td>: 74cc5</td>
+                    </tr>
+                    <tr>
+                        <td>Dob</td>
+                        <td>: 11/12/1789</td>
+                    </tr>
+                    <tr>
+                        <td>Sex</td>
+                        <td>: Notspecified</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="print_body">
+                <!-- quest title {questionnaires.title} -->
+                <!-- <h4 class="title">CIPN-Fragebogen Polyneuropathie</h4> -->
+                <div class="sec">
+                    <!-- all headers with this class and tag {questionnaires.title} -->
+                    <h4 class="title">CIPN-Fragebogen Polyneuropathie questionnaires title</h4>
+                    <!-- question section with title and questions. This section repeats for questions -->
+                    <div class="q-sec">
+                        <h4 class="title">
+                            <!-- section title -->
+                            <span>CIPN-Fragebogen zur vergangenen Woche section title</span>
+                        </h4>
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                01. Haben Sie ein Kribbeln/Prickeln in Ihren Händen oder in Ihren Fingern verspürt?
+                            </h4>
+                            <!-- options based on types and option styles -->
+                            <div class="options_wrap">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <input type="radio" id="0" name="options" value="Überhaupt nicht">
+                                    <label for="0">Überhaupt nicht</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="radio" id="1" name="options" value="Wenig">
+                                    <label for="1">Wenig</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="radio" id="2" name="options" value="Mäßig">
+                                    <label for="2">Mäßig</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="radio" id="3" name="options" value="Sehr">
+                                    <label for="3">Sehr</label><br>
+                                </div>
+                            </div>
+                        </div>
+<!-- new quest inside section -->
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                02. Options horozontal
+                            </h4>
+                            <!-- options based on types and option styles=row options -->
+                            <div class="options_wrap row_options">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <input type="radio" id="0" name="options" value="Überhaupt nicht">
+                                    <label for="0">Überhaupt nicht</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="radio" id="1" name="options" value="Wenig">
+                                    <label for="1">Wenig</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="radio" id="2" name="options" value="Mäßig">
+                                    <label for="2">Mäßig</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="radio" id="3" name="options" value="Sehr">
+                                    <label for="3">Sehr</label><br>
+                                </div>
+                            </div>
+                        </div>
+<!-- new quset -->
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                02. text area
+                            </h4>
+                            <!-- options based on types and option styles=row options -->
+                            <div class="options_wrap row_options">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <!-- <textarea type="text"></textarea> -->
+                                    <div class="textarea-content">
+                                            ijaisjd
+                                            awdjawd
+                                            dwadawf
+                                            awfaw
+                                            fawfaf
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo nesciunt autem ea, sunt nobis earum exercitationem rerum consectetur. Fugiat dolores delectus nostrum ea laboriosam illo, iusto nisi molestias nihil sequi?
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel modi voluptas nam, quia, at quas ab eaque suscipit fugit minus veritatis dignissimos similique, dicta sint nobis in atque perspiciatis repellat!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- new quset -->
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                03. input
+                            </h4>
+                            <!-- options based on types and option styles=row options -->
+                            <div class="options_wrap row_options">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <input type="text" class="input"></input>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- new quset -->
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                03. select
+                            </h4>
+                            <!-- options based on types and option styles=row options -->
+                            <div class="options_wrap row_options">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <select name="cars" id="cars">
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="opel">Opel</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+<!-- new section -->
+                    <div class="q-sec">
+                        <h4 class="title">
+                            <!-- section title -->
+                            <span>EQ-5D-5L in new section</span>
+                        </h4>
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                01. MOBILITY Radio list
+                            </h4>
+                            <!-- options based on types and option styles -->
+                            <div class="options_wrap">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <input type="checkbox" id="0" name="options" value="I have no problems in walking about">
+                                    <label for="0">I have no problems in walking about</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="checkbox" id="1" name="options" value="I have slight problems in walking about">
+                                    <label for="1">I have slight problems in walking about</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="checkbox" id="2" name="options" value="I have moderate problems in walking about">
+                                    <label for="2">I have moderate problems in walking about</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="checkbox" id="3" name="options" value="I have severe problems in walking about">
+                                    <label for="3">I have severe problems in walking about</label><br>
+                                </div>
+                                <div class="options">
+                                    <input type="checkbox" id="3" name="options" value="I am unable to walk about">
+                                    <label for="3">I am unable to walk about</label><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- new section -->
+                    <div class="q-sec">
+                        <h4 class="title">
+                            <!-- section title -->
+                            <span>YOUR HEALTH TODAY new section</span>
+                        </h4>
+                        <div class="quest">
+                            <!-- question -->
+                            <h4 class="title">
+                                01. 0 = the worst health you can imagine, 100 = the best health you can imagine
+                            </h4>
+                            <!-- options based on types and option styles -->
+                            <div class="options_wrap">
+                                <!-- ansType: "o" ,option_style: "l" type radio -->
+                                <!-- id={options.order} value={options.title} labe={options.title} -->
+                                <div class="options">
+                                    <!-- <input type="radio" id="0" name="options" value="Überhaupt nicht">
+                                    <label for="0">Überhaupt nicht</label><br> -->
+                                    <div id="RangeSlider" class="rageSlider">
+                                        <span class="slider-value"></span>
+                                        <input id="SliderInput" 
+                                            interval="5" 
+                                            type="range" 
+                                            min="0" 
+                                            max="100" 
+                                            />
+                                        <div class="sldierLabels">                                            
+                                        </div>
+                                        <!-- lebels -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var slider,SliderInput,labels,min,max,interval,divs;
+        document.addEventListener("DOMContentLoaded", function(){
+            Slider = document.getElementById("RangeSlider");
+            // SliderInput = Slider.firstElementChild;
+            SliderInput = Slider.children[1];
+            labels = Slider.getElementsByClassName("sldierLabels")[0];
+            Slider.children[0].innerHTML = '0'
+            min = parseInt(SliderInput.getAttribute("min")),
+            max = parseInt(SliderInput.getAttribute("max")),
+            interval = parseInt(SliderInput.getAttribute("interval")),
+            divs = (max-min)/interval;
+                // points = max/divs;
+            // let min,max,interval;
+            // ["min", "max", "interval"].forEach(
+            //     // prefix => document.addEventListener(prefix+"fullscreenchange", yourCheckFunction, false)
+            //     // prefix =>  prefix = SliderInput.getAttribute(prefix)
+            //     // prefix => return SliderInput.getattribute(`${i}`);
+            //     prefix => {
+            //         SliderInput.getattribute(`${prefix}`);
+            //         console.log(prefix)
+            //     }
+                
+            // );
+            function genLabels(){
+                for (i = min; i < max+1; i++) {
+                    if(i%5 === 0){
+                        var label = document.createElement("span")
+                        label.setAttribute("class", 'label');
+                        label.classList.add('slider-labels')
+                        label.style.left = `${parseInt(i)}%`;
+                        label.setAttribute("data-value", parseInt(i));
+                        label.innerHTML = i;
+                        labels.appendChild(label)
+                    }
+                
+            }}
+            genLabels();
+            function getSliderValue(){
+                console.log(this.value)
+                Slider.children[0].innerHTML = this.value;
+            }
+            SliderInput.addEventListener('change', getSliderValue)
+
+            // function updateTextInput(val) {
+            //     document.getElementsByClassName('rageSlider')[0].value=val; 
+            //     console.log(val)
+            // }
+
+        });
+    </script>
+</body>
+</html>
