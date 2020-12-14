@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/mdb.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/web-fonts-with-css/css/fontawesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Zilla+Slab+Highlight" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/kado.css">
+    <title>Cankado</title>
+    <style>
+        .cl-container {
+            text-align: center;
+        }
+
+        .cl-logo {
+            position: absolute;
+            bottom: 50%;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+
+    <div id="root" class="h-100">
+        <div class="cl-container">
+            loading
+        </div>
+    </div>
+    <div id="browser_outer" class="w-100 h-100" style="display:none;">
+        <div class="browser_text_center_table w-100">
+            <div class="browser_text_center_table_cell">
+                <div class="text-center w-100">
+                    <img id="browser_support_img" src="/images/cankado.png" />
+                </div>
+                <h3 class='w-100 text-center browser_support' id="browser_support">This browser is not supported</h3>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/js/mdb.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
+    <script>
+        var checkVersion = function () {
+            var agent = window.navigator.userAgent,
+                start = agent.indexOf('OS ');
+            if ((agent.indexOf('iPhone') > -1 || agent.indexOf('iPad') > -1) && start > -1) {
+                var version = window.Number(agent.substr(start + 3, 2).replace('_', '.'));
+                return version - 10
+            }
+        }
+
+        console.log(agent)
+        if (checkVersion() < 0) {
+            document.getElementById("root").style.display = "none";
+            document.getElementById("browser_outer").style.display = "block";
+            document.getElementById("browser_support").innerHTML = "This OS is not supported";
+        } else {
+            document.getElementById("root").style.display = "block";
+            document.getElementById("browser_outer").style.display = "none";
+            document.getElementById("browser_support").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
