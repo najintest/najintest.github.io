@@ -40,7 +40,7 @@
             loading
         </div>
     </div>
-    <div id="browser_outer" class="w-100 h-100" style="display:none;">
+    <!-- <div id="browser_outer" class="w-100 h-100" style="display:none;">
         <div class="browser_text_center_table w-100">
             <div class="browser_text_center_table_cell">
                 <div class="text-center w-100">
@@ -49,7 +49,7 @@
                 <h3 class='w-100 text-center browser_support' id="browser_support">This browser is not supported</h3>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -69,7 +69,7 @@
             }
         }
 
-        console.log(agent)
+        console.log(agent,'pppp')
         if (checkVersion() < 0) {
             document.getElementById("root").style.display = "none";
             document.getElementById("browser_outer").style.display = "block";
